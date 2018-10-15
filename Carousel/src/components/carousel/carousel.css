@@ -1,0 +1,19 @@
+.carousel {
+  position: relative;
+}
+
+.carousel__nav {
+  position: absolute;
+  top: 50%;
+  margin-top: -31px;
+  left: 10px;
+  background: url(left-arrow.svg);
+  width: 63px;
+  height: 63px;
+}
+
+.carousel__nav.carousel__next {
+  right: 10px;
+  left: auto;
+  background: url(right-arrow.svg);
+}
