@@ -1,8 +1,9 @@
 <template>
-  <div v-show="visible">
-    Index: {{ index }}
-    <slot></slot>
-  </div>
+  <transition :name="transition">
+    <div v-show="visible">
+      <slot></slot>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -14,6 +15,11 @@
       }
     },
     computed: {
+      transition () {
+        if (this.$parent.direction) {
+          return 'slide-' + this.$parent.direction
+        }
+      },
       visible () {
         return this.index === this.$parent.index
       }
@@ -22,5 +28,4 @@
 
 </script>
 
-<style lang="css">
-</style>
+<style src="./carouselSlide.css"></style>
