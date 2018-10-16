@@ -22,3 +22,73 @@
     transform: scale(1.5);
   }
 }
+
+.lightbox__btn {
+  position: fixed;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -40px;
+  background-color: transparent;
+  background-size: 50px 50px;
+  transition: transform .3s;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.5);
+  }
+}
+
+.lightbox__next {
+  right: 100px;
+  background-image: url(right-arrow.svg);
+}
+
+.lightbox__prev {
+  left: 100px;
+  background-image: url(left-arrow.svg);
+}
+
+// Next
+
+.lightbox-next-enter-active, .lightbox-next-leave-active {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: 0.5s, opacity 0.15s;
+}
+
+.lightbox-next-enter-active {
+  opacity: 0;
+  transform: translateX(250px);
+  transition-delay: 0.3s;
+}
+
+.lightbox-next-leave-active {
+  opacity: 0;
+  transform: translateX(-250px);
+}
+
+// Previous
+
+.lightbox-prev-enter-active, .lightbox-prev-leave-active {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: 0.5s, opacity 0.15s;
+}
+
+.lightbox-prev-enter-active {
+  opacity: 0;
+  transform: translateX(-250px);
+  transition-delay: 0.3s;
+}
+
+.lightbox-prev-leave-active {
+  opacity: 0;
+  transform: translateX(250px);
+}

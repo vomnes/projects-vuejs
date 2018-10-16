@@ -51,14 +51,12 @@ export default {
     }
     image.src = this.image
     this.resizeEvent = () => {
-      console.log('resize1')
       this.resizeImage(image)
     }
     window.addEventListener('resize', this.resizeEvent)
   },
   // Clear resizeEvent after that pictures had been closed
   destroyed () {
-    console.log('resize')
     window.removeEventListener('resize', this.resizeEvent)
   }
 }
