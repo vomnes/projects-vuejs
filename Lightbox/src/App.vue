@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <a :href="'https://lorempicsum.com/nemo/800/600/' + n" v-lightbox v-for="(n, index) in 9" :key="index">
+      <img :src="'https://lorempicsum.com/nemo/150/150/' + n">
+    </a>
+    <lightbox></lightbox>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import Lightbox from './components/lightbox/Lightbox.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Lightbox
   }
 }
 </script>
