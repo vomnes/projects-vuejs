@@ -14,7 +14,8 @@ const router = new VueRouter({
     name: 'root'
   }, {
     path: '/a',
-    component: require('./components/PageA.vue').default,
+    // Charged only when needed
+    component: resolve => require(['./components/PageA.vue'], resolve).default,
     name: 'a',
     children: [{
       path: 'b',

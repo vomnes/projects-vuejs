@@ -9,7 +9,9 @@
     </div>
     <div class="sidebar">
       <h1>Sidebar</h1>
-      <router-view name="sidebar"></router-view>
+      <transition>
+        <router-view name="sidebar"></router-view>
+      </transition>
     </div>
     <div class="main">
       <h1>Main</h1>
